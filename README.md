@@ -1,30 +1,15 @@
-# emoji-transfer-yolov5
+# yolov5-server
 
-Detect your and your friends expressions!
+Provide remote detect service
 
 Maybe gestures also can be recognized well!🤩
 
-## Train
+## for Noob
 
-You can set the a series of config in running command
-
-```sh
-python train.py \
-  --weight="weight/yolov5l.pt" \
-  --cfg="models/yolov5l.yaml" \
-  --data="..emoji-dataset/emoji.yaml" \
-  --workers=8 \
-  --epochs=300 \
-  --batch-size=16
-```
-
-## Detect
-
-You can place the detect images in specific directory declared in `--source`.
+You can enter fllow in running command 
+use it before must ensure you modified the ip in the app.py
 
 ```sh
-python3 detect.py \
-  --weight="runs/train/exp/weights/best.pt" \
-  --source="../emoji-dataset/tests" \
-  --data="../emoji-dataset/emoji.yaml"
+python -m  flask  --app  app:create_app  run  --host="0.0.0.0"
 ```
+
